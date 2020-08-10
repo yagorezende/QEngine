@@ -18,4 +18,4 @@ if __name__ == "__main__":
     if(args.build):
         print("TODO build")
     else:
-        mp.MainPaneApp().run()
+        mp.QEngineApp().run()

@@ -1,5 +1,5 @@
-from kivy.lang import Builder
-from kivy.uix.actionbar import ActionBar
+from kivy.uix.dropdown import DropDown
 
-class OptionsMenu(ActionBar):
+
+class OptionsMenu(DropDown):
     pass

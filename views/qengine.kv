@@ -1,0 +1,77 @@
+#:kivy 1.11.1
+
+<MainPaneWidget>
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.size
+        background_color: 0.3, 0, 0, 0.5
+        pos: 0, root.height - 30
+
+        ActionBar:
+            id: actionBar
+            height: 30
+            background_normal: ''
+            background_down: ''
+            background_color: 0, 1, 0, 1
+
+            ActionView:
+                use_separator: True
+                ActionPrevious:
+                    title: 'Teste do Action Bar'
+                    with_previous: False
+                    size_hint_x: None
+                    width: 0
+
+                ActionOverflow:
+                    ActionButton:
+                        icon: 'atlas://data/images/defaulttheme/filechooser_file'
+                        on_press: print('Seleção arquivos pressionado')
+
+                ActionGroup:
+                    text: 'Arquivo'
+                    ActionButton:
+                        text: 'Abrir'
+                        on_press: print('Pressionado Abrir')
+
+                    ActionButton:
+                        text: 'Salvar'
+                        on_press: print('Pressionado Salvar')
+
+                    ActionButton:
+                        text: 'Salvar como...'
+                        on_press: print('Pressionado Salvar como...')
+
+                    ActionButton:
+                        text: 'Sair'
+                        on_press: print('Pressionado Sair')
+
+                ActionGroup:
+                    text: 'Config'
+
+                    ActionButton:
+                        text: 'Idi. Português'
+                    ActionButton:
+                        text: 'Idi. Inglês'
+
+                ActionGroup:
+                    text: 'Ajuda'
+                    ActionButton:
+                        text: 'Sobre'
+                    ActionButton:
+                        text: 'Ajuda'
+
+<OptionsMenu>:
+    Button:
+        text: 'My first Item'
+        size_hint_y: None
+        height: 44
+        on_release: root.select('item1')
+    Label:
+        text: 'Unselectable item'
+        size_hint_y: None
+        height: 44
+    Button:
+        text: 'My second Item'
+        size_hint_y: None
+        height: 44
+        on_release: root.select('item2')
